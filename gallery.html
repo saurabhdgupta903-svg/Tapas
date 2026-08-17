@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAPAS Moments — Gallery | Meditation &amp; Wellness Club</title>
+  <meta name="description" content="Photo gallery and highlights from TAPAS PCE meditation sessions, yoga celebrations, and campus wellness workshops.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL STICKY NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Left: Official TAPAS logo -->
+      <a href="index.html" class="brand-link" aria-label="TAPAS PCE Home">
+        <img src="images/tapas-logo.png" alt="TAPAS PCE Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">TAPAS <span class="accent-pce">PCE</span></span>
+          <span class="brand-subtitle">Meditation &amp; Wellness Club</span>
+        </div>
+      </a>
+
+      <!-- Mobile Menu Toggle Button (Hamburger) -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="meditation.html" class="nav-link">Meditation</a></li>
+          <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-mobile-cta">
+            <a href="contact.html" class="btn-join-nav">Join TAPAS</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions: Theme Toggle & Join Button -->
+      <div class="header-right-wrap">
+        <button class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn-join-nav">Join TAPAS</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ========================================================================
+         PAGE HERO
+         ======================================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="badge badge-orange">Campus Memories &amp; Captures</span>
+        <h1 class="page-hero-title">TAPAS Moments</h1>
+        <p class="page-hero-desc">
+          Glimpses into our weekly sessions, meditation retreats, International Day of Yoga celebrations, and campus wellness drives.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         GALLERY FILTERS & DYNAMIC GRID
+         ======================================================================== -->
+    <section class="section" id="gallery-section">
+      <div class="container">
+
+        <!-- Category Filters -->
+        <div class="category-filters mb-xl" role="group" aria-label="Gallery category filters">
+          <button class="filter-btn gallery-filter-btn active" data-category="All">All</button>
+          <button class="filter-btn gallery-filter-btn" data-category="Meditation">Meditation</button>
+          <button class="filter-btn gallery-filter-btn" data-category="Workshops">Workshops</button>
+          <button class="filter-btn gallery-filter-btn" data-category="Events">Events</button>
+          <button class="filter-btn gallery-filter-btn" data-category="Community">Community</button>
+        </div>
+
+        <!-- Dynamic Gallery Grid (Populated via js/gallery.js) -->
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Gallery Items Rendered Dynamically -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CTA BANNER
+         ======================================================================== -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner">
+          <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Be Part of the Story</span>
+          <h2>Create Mindful Memories With TAPAS</h2>
+          <p>
+            Join our weekly group sittings or volunteer at our upcoming events to experience the joy of campus wellness.
+          </p>
+          <a href="contact.html" class="btn btn-primary btn-lg">Join TAPAS PCE</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       FULLSCREEN LIGHTBOX MODAL
+       ======================================================================== -->
+  <div class="lightbox-backdrop" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-dialog">
+      <!-- Close Button -->
+      <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close fullscreen view">✕</button>
+
+      <!-- Previous & Next Navigation Buttons -->
+      <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous photo">‹</button>
+      <button class="lightbox-nav-btn lightbox-next" id="lightbox-next-btn" aria-label="Next photo">›</button>
+
+      <!-- Large Image Box -->
+      <div class="lightbox-image-container">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; text-align: center; padding: 2rem;">
+          <span style="font-size: 3.5rem;">📷</span>
+          <strong style="color: #F8FAFC; font-size: 1.1rem;">[Full Image Preview Placeholder]</strong>
+          <span style="font-size: 0.85rem; color: #94A3B8;">Replaceable with actual event high-resolution photograph</span>
+        </div>
+      </div>
+
+      <!-- Info Footer -->
+      <div class="lightbox-info">
+        <div>
+          <h3 id="lightbox-title" style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.2rem;">Photo Title</h3>
+          <p id="lightbox-caption" class="text-muted" style="font-size: 0.88rem;">Photo caption details</p>
+        </div>
+        <span class="lightbox-counter" id="lightbox-counter">1 / 8</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="images/tapas-logo.png" alt="TAPAS PCE Logo" class="footer-logo">
+            <div class="brand-text">
+              <span class="brand-title">TAPAS <span class="accent-pce">PCE</span></span>
+              <span class="brand-subtitle">Meditation &amp; Wellness Club</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            A campus wellness community empowering students with Heartfulness relaxation, guided meditation, and inner balance.
+          </p>
+          <span class="footer-college-tag">Pillai College of Engineering (PCE)</span>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links (Placeholders) Column -->
+        <div class="footer-social-col">
+          <h4 class="footer-col-title">Connect With Us</h4>
+          <div class="footer-links-list">
+            <div class="footer-social-item">
+              <span>Instagram:</span>
+              <a href="#" target="_blank" rel="noopener noreferrer">[Add TAPAS Instagram]</a>
+            </div>
+            <div class="footer-social-item">
+              <span>Email:</span>
+              <a href="mailto:example@domain.com">[Add TAPAS Email]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 TAPAS PCE. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

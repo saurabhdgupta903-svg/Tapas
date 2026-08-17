@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events &amp; Programs — TAPAS PCE | Meditation &amp; Wellness Club</title>
+  <meta name="description" content="Explore upcoming meditation sessions, stress detox workshops, and wellness gatherings at Pillai College of Engineering.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Left: Official TAPAS logo -->
+      <a href="index.html" class="brand-link" aria-label="TAPAS PCE Home">
+        <img src="images/tapas-logo.png" alt="TAPAS PCE - Meditation and Wellness Club" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">TAPAS <span class="accent-pce">PCE</span></span>
+          <span class="brand-subtitle">Meditation &amp; Wellness Club</span>
+        </div>
+      </a>
+
+      <!-- Mobile Menu Toggle Button (Hamburger) -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="events.html" class="nav-link active">Events</a></li>
+          <li><a href="meditation.html" class="nav-link">Meditation</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-mobile-cta">
+            <a href="contact.html" class="btn-join-nav">Join TAPAS</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions: Theme Toggle & Join Button -->
+      <div class="header-right-wrap">
+        <button class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn-join-nav">Join TAPAS</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ========================================================================
+         PAGE HERO
+         ======================================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="badge badge-orange">Campus Gatherings &amp; Sittings</span>
+        <h1 class="page-hero-title">Events &amp; Programs</h1>
+        <p class="page-hero-desc">
+          Explore meditation sessions, wellness activities, workshops and community programs at Pillai College of Engineering.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         EVENTS EXPLORER: SEARCH, FILTERS & GRID
+         ======================================================================== -->
+    <section class="section" id="events-section">
+      <div class="container">
+
+        <!-- Controls: Search & Category Filters -->
+        <div class="events-controls-wrap">
+          <!-- Search Bar -->
+          <div class="events-search-box">
+            <span class="events-search-icon">🔍</span>
+            <input 
+              type="text" 
+              id="events-search" 
+              class="events-search-input" 
+              placeholder="Search events by title, description, or venue..." 
+              aria-label="Search events"
+            >
+          </div>
+
+          <!-- Category Filters -->
+          <div class="category-filters" role="group" aria-label="Event category filters">
+            <button class="filter-btn active" data-category="All">All</button>
+            <button class="filter-btn" data-category="Meditation">Meditation</button>
+            <button class="filter-btn" data-category="Wellness">Wellness</button>
+            <button class="filter-btn" data-category="Workshop">Workshop</button>
+            <button class="filter-btn" data-category="Community">Community</button>
+            <button class="filter-btn" data-category="Other">Other</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Events Grid (Generated via js/events.js) -->
+        <div class="events-grid" id="events-grid">
+          <!-- Event Cards Rendered by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         JOIN CALL TO ACTION
+         ======================================================================== -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner">
+          <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Suggest an Activity</span>
+          <h2>Want to Host or Suggest a Wellness Session?</h2>
+          <p>
+            We welcome student ideas, faculty collaborations, and guest speaker suggestions to expand wellness across PCE campus.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Reach Out to Coordinators</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       1. EVENT DETAILS MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop" id="event-details-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <span class="badge badge-blue" id="modal-event-category">Category</span>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="modal-event-title" style="margin-bottom: 1rem;">Event Title</h3>
+        
+        <div class="event-card-meta" style="margin-bottom: 1.25rem;">
+          <div class="event-meta-row">
+            <span>📅</span>
+            <span id="modal-event-date">Date</span>
+          </div>
+          <div class="event-meta-row">
+            <span>⏰</span>
+            <span id="modal-event-time">Time</span>
+          </div>
+          <div class="event-meta-row">
+            <span>📍</span>
+            <span id="modal-event-venue">Venue</span>
+          </div>
+        </div>
+
+        <div style="background-color: var(--surface-muted); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--dark-text);">About this session:</h4>
+          <p id="modal-event-description" style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Event description details.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="document.getElementById('modal-close-btn').click()">Close</button>
+        <button class="btn btn-primary" id="modal-event-register-btn">Register for this Event</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. EVENT REGISTRATION MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop" id="registration-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <!-- Header -->
+      <div class="modal-header">
+        <div>
+          <span class="badge badge-orange" style="margin-bottom: 0.25rem;">Free Event Registration</span>
+          <h3 class="modal-title" id="reg-modal-event-title">Register for Event</h3>
+        </div>
+        <button class="modal-close-btn" id="reg-modal-close-btn" aria-label="Close registration modal">✕</button>
+      </div>
+
+      <!-- Registration Form Body -->
+      <div class="modal-body" id="reg-form-body">
+        <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1.25rem;">
+          Please enter your details below to reserve your spot.
+        </p>
+
+        <form id="event-registration-form" novalidate>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="reg-fullname" class="form-label">
+              Full Name <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="reg-fullname" 
+              class="form-control" 
+              placeholder="e.g. Rahul Sharma" 
+              required
+            >
+            <span class="field-error-text" id="err-reg-name">Please enter your full name.</span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="reg-email" class="form-label">
+              Email Address <span class="required">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="reg-email" 
+              class="form-control" 
+              placeholder="e.g. rahul.sharma@student.mes.ac.in" 
+              required
+            >
+            <span class="field-error-text" id="err-reg-email">Please enter a valid email address.</span>
+          </div>
+
+          <!-- Department & Year (2 Columns) -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="reg-department" class="form-label">
+                Department <span class="required">*</span>
+              </label>
+              <select id="reg-department" class="form-control" required>
+                <option value="" disabled selected>Select Department</option>
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electronics &amp; Computer Science">Electronics &amp; Computer Science (ECS)</option>
+                <option value="Electronics &amp; Telecommunication">Electronics &amp; Telecommunication (EXTC)</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Automobile Engineering">Automobile Engineering</option>
+                <option value="First Year Engineering">First Year (FE)</option>
+                <option value="Faculty / Staff">Faculty / Staff</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="field-error-text" id="err-reg-dept">Please select your department.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-year" class="form-label">
+                Year <span class="required">*</span>
+              </label>
+              <select id="reg-year" class="form-control" required>
+                <option value="" disabled selected>Select Year</option>
+                <option value="First Year (FE)">First Year (FE)</option>
+                <option value="Second Year (SE)">Second Year (SE)</option>
+                <option value="Third Year (TE)">Third Year (TE)</option>
+                <option value="Final Year (BE)">Final Year (BE)</option>
+                <option value="Faculty / Other">Faculty / Other</option>
+              </select>
+              <span class="field-error-text" id="err-reg-year">Please select your year.</span>
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group">
+            <label for="reg-phone" class="form-label">
+              Phone Number <span class="required">*</span>
+            </label>
+            <input 
+              type="tel" 
+              id="reg-phone" 
+              class="form-control" 
+              placeholder="e.g. 9876543210" 
+              required
+            >
+            <span class="field-error-text" id="err-reg-phone">Please enter a valid 10-digit phone number.</span>
+          </div>
+
+          <!-- Developer Demo Notice Box -->
+          <div class="demo-notice-box">
+            <strong>ℹ️ Frontend Demo Notice:</strong>
+            This is a frontend demonstration. Registrations are saved in browser localStorage and can be connected to a live backend database later.
+          </div>
+
+          <div class="modal-footer" style="padding-left: 0; padding-right: 0; padding-bottom: 0;">
+            <button type="button" class="btn btn-ghost" onclick="document.getElementById('reg-modal-close-btn').click()">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="reg-submit-btn">Submit Registration</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success Screen -->
+      <div class="modal-body" id="reg-success-body" style="display: none; text-align: center; padding: var(--spacing-2xl) var(--spacing-md);">
+        <div class="success-checkmark">✓</div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--dark-text);">
+          Registration successful!
+        </h3>
+        <p class="text-muted" style="margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">
+          Your registration has been recorded for this demo. We look forward to seeing you at the session!
+        </p>
+
+        <div style="background-color: var(--surface-muted); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; text-align: left; font-size: 0.9rem;">
+          <div style="margin-bottom: 0.35rem;"><strong>Event:</strong> <span id="conf-event-name">-</span></div>
+          <div style="margin-bottom: 0.35rem;"><strong>Name:</strong> <span id="conf-user-name">-</span></div>
+          <div><strong>Email:</strong> <span id="conf-user-email">-</span></div>
+        </div>
+
+        <button class="btn btn-primary btn-full" id="reg-success-close-btn">Done</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="images/tapas-logo.png" alt="TAPAS PCE - Meditation and Wellness Club" class="footer-logo">
+            <div class="brand-text">
+              <span class="brand-title">TAPAS <span class="accent-pce">PCE</span></span>
+              <span class="brand-subtitle">Meditation &amp; Wellness Club</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            A college community creating space to pause, connect, reflect and grow through meditation, wellness and meaningful activities.
+          </p>
+          <span class="footer-college-tag">Pillai College of Engineering (PCE)</span>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links (Placeholders) Column -->
+        <div class="footer-social-col">
+          <h4 class="footer-col-title">Connect With Us</h4>
+          <div class="footer-links-list">
+            <div class="footer-social-item">
+              <span>Instagram:</span>
+              <a href="#" target="_blank" rel="noopener noreferrer">[Add TAPAS Instagram]</a>
+            </div>
+            <div class="footer-social-item">
+              <span>Email:</span>
+              <a href="mailto:example@domain.com">[Add TAPAS Email]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 TAPAS PCE. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

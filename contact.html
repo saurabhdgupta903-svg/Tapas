@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Join Us — TAPAS PCE | Meditation &amp; Wellness Club</title>
+  <meta name="description" content="Get in touch with TAPAS PCE coordinators, ask questions about meditation sessions, or register your interest at Pillai College of Engineering.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL STICKY NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Left: Official TAPAS logo -->
+      <a href="index.html" class="brand-link" aria-label="TAPAS PCE Home">
+        <img src="images/tapas-logo.png" alt="TAPAS PCE Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">TAPAS <span class="accent-pce">PCE</span></span>
+          <span class="brand-subtitle">Meditation &amp; Wellness Club</span>
+        </div>
+      </a>
+
+      <!-- Mobile Menu Toggle Button (Hamburger) -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="meditation.html" class="nav-link">Meditation</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li class="nav-mobile-cta">
+            <a href="contact.html" class="btn-join-nav">Join TAPAS</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions: Theme Toggle & Join Button -->
+      <div class="header-right-wrap">
+        <button class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn-join-nav">Join TAPAS</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ========================================================================
+         PAGE HERO
+         ======================================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="badge badge-orange">Reach Out &amp; Connect</span>
+        <h1 class="page-hero-title">Contact &amp; Join TAPAS PCE</h1>
+        <p class="page-hero-desc">
+          Have questions about our meditation sittings, want to collaborate on a workshop, or ready to join our wellness community? We'd love to hear from you.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTACT SECTION: 2-COLUMN SPLIT
+         ======================================================================== -->
+    <section class="section" id="contact-main">
+      <div class="container">
+        <div class="contact-layout-grid">
+
+          <!-- Left Side: Contact Information -->
+          <div class="contact-info-card">
+            <div class="contact-info-header">
+              <span class="badge badge-blue mb-sm">Get in Touch</span>
+              <h2>TAPAS PCE</h2>
+              <p class="text-muted">Meditation and Wellness Club</p>
+            </div>
+
+            <div class="contact-info-list">
+              <!-- Email -->
+              <div class="contact-info-item">
+                <div class="contact-icon-box contact-icon-orange">✉️</div>
+                <div class="contact-item-content">
+                  <h3>Email</h3>
+                  <a href="mailto:example@domain.com">[Add TAPAS Email]</a>
+                </div>
+              </div>
+
+              <!-- Instagram -->
+              <div class="contact-info-item">
+                <div class="contact-icon-box contact-icon-pink">📸</div>
+                <div class="contact-item-content">
+                  <h3>Instagram</h3>
+                  <a href="#" target="_blank" rel="noopener noreferrer">[Add TAPAS Instagram]</a>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-info-item">
+                <div class="contact-icon-box contact-icon-green">📍</div>
+                <div class="contact-item-content">
+                  <h3>Location</h3>
+                  <p>[Add PCE location]</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- College Campus Note Box -->
+            <div class="contact-badge-box">
+              <strong style="color: var(--dark-text); display: block; margin-bottom: 0.25rem;">🏫 Campus Address:</strong>
+              <span>Pillai College of Engineering (PCE), Dr. K. M. Vasudevan Pillai Campus, Sector 16, New Panvel, Navi Mumbai, Maharashtra 410206.</span>
+            </div>
+          </div>
+
+          <!-- Right Side: Contact Form Card -->
+          <div class="contact-form-card">
+            
+            <!-- Form Container -->
+            <div id="contact-form-container">
+              <div class="contact-form-header">
+                <h3>Send Us a Message</h3>
+                <p class="text-muted" style="font-size: 0.92rem;">
+                  Fill out the details below and our student coordinators will connect with you.
+                </p>
+              </div>
+
+              <form id="contact-form" novalidate>
+                <!-- Full Name -->
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">
+                    Name <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="contact-name" 
+                    name="name" 
+                    class="form-control" 
+                    placeholder="Enter your full name" 
+                    required
+                  >
+                  <span class="field-error-text" id="err-contact-name">Please enter your name.</span>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">
+                    Email <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="contact-email" 
+                    name="email" 
+                    class="form-control" 
+                    placeholder="Enter your email address" 
+                    required
+                  >
+                  <span class="field-error-text" id="err-contact-email">Please enter a valid email address.</span>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">
+                    Subject <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="contact-subject" 
+                    name="subject" 
+                    class="form-control" 
+                    placeholder="e.g. Joining the club / Session inquiry" 
+                    required
+                  >
+                  <span class="field-error-text" id="err-contact-subject">Please enter a subject.</span>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">
+                    Message <span class="required">*</span>
+                  </label>
+                  <textarea 
+                    id="contact-message" 
+                    name="message" 
+                    class="form-control" 
+                    placeholder="How can we help you on your wellness journey?" 
+                    rows="4" 
+                    required
+                  ></textarea>
+                  <span class="field-error-text" id="err-contact-message">Please enter your message (at least 5 characters).</span>
+                </div>
+
+                <!-- Demo Notice -->
+                <div class="demo-notice-box" style="margin-bottom: 1.25rem;">
+                  <strong>ℹ️ Frontend Demo Notice:</strong>
+                  This form uses client-side JavaScript validation. In this frontend demo, no network request or database write is performed.
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-full" id="contact-submit-btn">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Success Confirmation Screen (Revealed on Valid Submission) -->
+            <div class="contact-success-box" id="contact-success-box">
+              <div class="contact-success-icon">✓</div>
+              <h3 style="font-size: 1.5rem; color: var(--dark-text); margin-bottom: 0.5rem;">
+                Thank you! Your message has been prepared successfully.
+              </h3>
+              <p class="text-muted" style="line-height: 1.6;">
+                Your inquiry details have been verified and processed in this frontend demo.
+              </p>
+
+              <div class="contact-summary-card">
+                <div><strong>Sender Name:</strong> <span id="summary-contact-name">-</span></div>
+                <div><strong>Sender Email:</strong> <span id="summary-contact-email">-</span></div>
+                <div><strong>Subject:</strong> <span id="summary-contact-subject">-</span></div>
+              </div>
+
+              <button class="btn btn-secondary" id="contact-reset-btn">Send Another Message</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="images/tapas-logo.png" alt="TAPAS PCE Logo" class="footer-logo">
+            <div class="brand-text">
+              <span class="brand-title">TAPAS <span class="accent-pce">PCE</span></span>
+              <span class="brand-subtitle">Meditation &amp; Wellness Club</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            A campus wellness community empowering students with Heartfulness relaxation, guided meditation, and inner balance.
+          </p>
+          <span class="footer-college-tag">Pillai College of Engineering (PCE)</span>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links (Placeholders) Column -->
+        <div class="footer-social-col">
+          <h4 class="footer-col-title">Connect With Us</h4>
+          <div class="footer-links-list">
+            <div class="footer-social-item">
+              <span>Instagram:</span>
+              <a href="#" target="_blank" rel="noopener noreferrer">[Add TAPAS Instagram]</a>
+            </div>
+            <div class="footer-social-item">
+              <span>Email:</span>
+              <a href="mailto:example@domain.com">[Add TAPAS Email]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 TAPAS PCE. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+</body>
+</html>

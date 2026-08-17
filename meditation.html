@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meditation &amp; Relaxation Space — TAPAS PCE</title>
+  <meta name="description" content="Interactive breathing exercises, customizable meditation timers, and daily mindfulness tips for Pillai College of Engineering students.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL STICKY NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Left: Official TAPAS logo -->
+      <a href="index.html" class="brand-link" aria-label="TAPAS PCE Home">
+        <img src="images/tapas-logo.png" alt="TAPAS PCE Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">TAPAS <span class="accent-pce">PCE</span></span>
+          <span class="brand-subtitle">Meditation &amp; Wellness Club</span>
+        </div>
+      </a>
+
+      <!-- Mobile Menu Toggle Button (Hamburger) -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="meditation.html" class="nav-link active">Meditation</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-mobile-cta">
+            <a href="contact.html" class="btn-join-nav">Join TAPAS</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions: Theme Toggle & Join Button -->
+      <div class="header-right-wrap">
+        <button class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn-join-nav">Join TAPAS</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ========================================================================
+         1. PAGE HERO
+         ======================================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="badge badge-green">Mindfulness &amp; Zen Space</span>
+        <h1 class="page-hero-title">Meditation &amp; Relaxation Space</h1>
+        <p class="page-hero-desc">
+          Take a conscious pause. Center your thoughts with guided rhythmic breathing and focused meditation timers.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         2. BREATHING EXERCISE (LARGE ANIMATED CIRCLE)
+         ======================================================================== -->
+    <section class="section" id="breathing-exercise">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-blue">Rhythmic Breathwork</span>
+          <h2 class="section-title">Guided Breathing Exercise</h2>
+          <p class="section-subtitle">
+            Synchronize your breath with the expanding and contracting circle to relieve mental tension and restore inner calm.
+          </p>
+        </div>
+
+        <div class="breathing-studio-card">
+          <p class="text-muted" id="studio-breathing-prompt" style="font-size: 0.95rem; min-height: 24px;">
+            Click Start to begin your guided breathing cycle.
+          </p>
+
+          <!-- Large Animated Circle Visual -->
+          <div class="breathing-studio-wrap">
+            <div class="breathing-studio-glow"></div>
+            <div class="breathing-studio-ring"></div>
+            <div class="breathing-studio-circle" id="studio-breathing-circle">
+              <span class="breathing-state-text" id="studio-breathing-state">Breathe In</span>
+              <span class="breathing-seconds-text" id="studio-breathing-seconds">4s</span>
+            </div>
+          </div>
+
+          <!-- Controls: Start, Pause, Reset -->
+          <div class="breathing-controls">
+            <button class="btn btn-primary" id="breath-start-btn">Start</button>
+            <button class="btn btn-secondary" id="breath-pause-btn">Pause</button>
+            <button class="btn btn-ghost" id="breath-reset-btn">Reset</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. MEDITATION TIMER
+         ======================================================================== -->
+    <section class="section section-alt" id="meditation-timer">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-orange">Focused Sitting</span>
+          <h2 class="section-title">Meditation Timer</h2>
+          <p class="section-subtitle">
+            Choose your session length, close your eyes, and immerse yourself in peaceful silence.
+          </p>
+        </div>
+
+        <div class="timer-studio-card">
+          <!-- Presets: 1 min, 5 min, 10 min -->
+          <div class="timer-preset-wrap" role="group" aria-label="Timer presets">
+            <button class="timer-preset-btn" data-minutes="1">1 Minute</button>
+            <button class="timer-preset-btn" data-minutes="5">5 Minutes</button>
+            <button class="timer-preset-btn active" data-minutes="10">10 Minutes</button>
+          </div>
+
+          <!-- Time Display Box -->
+          <div class="timer-display-box">
+            <div class="timer-digits" id="timer-display">10:00</div>
+            <span class="timer-status-badge" id="timer-status-badge">Ready</span>
+          </div>
+
+          <!-- Controls: Start, Pause, Reset -->
+          <div class="timer-controls">
+            <button class="btn btn-primary" id="timer-start-btn">Start</button>
+            <button class="btn btn-secondary" id="timer-pause-btn">Pause</button>
+            <button class="btn btn-ghost" id="timer-reset-btn">Reset</button>
+          </div>
+
+          <!-- Completion Alert Message -->
+          <div class="timer-completion-alert" id="timer-completion-alert">
+            <strong style="display: block; font-size: 1.05rem; margin-bottom: 0.25rem;">✨ Session Complete!</strong>
+            <span>Take a gentle breath, slowly open your eyes, and carry this peaceful balance throughout your day.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. MINDFULNESS TIPS (4 CARDS)
+         ======================================================================== -->
+    <section class="section section-muted" id="mindfulness-tips">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-blue">Daily Wellness Habits</span>
+          <h2 class="section-title">Mindfulness Tips for Students</h2>
+          <p class="section-subtitle">
+            Simple, practical habits to maintain clear focus, lower academic stress, and stay centered during busy semesters.
+          </p>
+        </div>
+
+        <div class="tips-grid">
+          <!-- Tip 1: Be Present -->
+          <div class="tip-card">
+            <div class="tip-icon" style="background-color: #FEF3C7; color: #D97706;">🎯</div>
+            <h3 class="tip-title">Be Present</h3>
+            <p class="tip-desc">
+              Focus your attention on the single task before you. Whenever your mind drifts to past worries or upcoming exams, gently guide it back to the present moment.
+            </p>
+          </div>
+
+          <!-- Tip 2: Take a Breath -->
+          <div class="tip-card">
+            <div class="tip-icon" style="background-color: #E0F2FE; color: #0284c7;">🌬️</div>
+            <h3 class="tip-title">Take a Breath</h3>
+            <p class="tip-desc">
+              Before entering a lecture, exam hall, or presentation, take three slow, conscious breaths to ground your nervous system and steady your thoughts.
+            </p>
+          </div>
+
+          <!-- Tip 3: Take Short Breaks -->
+          <div class="tip-card">
+            <div class="tip-icon" style="background-color: #DCFCE7; color: #16A34A;">⏳</div>
+            <h3 class="tip-title">Take Short Breaks</h3>
+            <p class="tip-desc">
+              Step away from computer screens every 45 to 60 minutes. Stretch your body, hydrate, and allow your eyes to rest on natural light or open space.
+            </p>
+          </div>
+
+          <!-- Tip 4: Practice Gratitude -->
+          <div class="tip-card">
+            <div class="tip-icon" style="background-color: #EDE9FE; color: #7C3AED;">🙏</div>
+            <h3 class="tip-title">Practice Gratitude</h3>
+            <p class="tip-desc">
+              End each day by noting down two or three small moments or friendships you appreciate. Gratitude builds resilience and fosters inner contentment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. JOIN TAPAS CTA
+         ======================================================================== -->
+    <section class="section" id="join-cta" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="cta-banner">
+          <span class="badge badge-orange" style="margin-bottom: 1rem;">Campus Meditation Circle</span>
+          <h2>Experience In-Person Meditation at PCE</h2>
+          <p>
+            Join fellow students and certified Heartfulness trainers for our weekly campus sittings and guided relaxation workshops.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary btn-lg">Join TAPAS PCE</a>
+            <a href="events.html" class="btn btn-secondary btn-lg">View Session Schedule</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       6. GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="images/tapas-logo.png" alt="TAPAS PCE Logo" class="footer-logo">
+            <div class="brand-text">
+              <span class="brand-title">TAPAS <span class="accent-pce">PCE</span></span>
+              <span class="brand-subtitle">Meditation &amp; Wellness Club</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            A campus wellness community empowering students with Heartfulness relaxation, guided meditation, and inner balance.
+          </p>
+          <span class="footer-college-tag">Pillai College of Engineering (PCE)</span>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links (Placeholders) Column -->
+        <div class="footer-social-col">
+          <h4 class="footer-col-title">Connect With Us</h4>
+          <div class="footer-links-list">
+            <div class="footer-social-item">
+              <span>Instagram:</span>
+              <a href="#" target="_blank" rel="noopener noreferrer">[Add TAPAS Instagram]</a>
+            </div>
+            <div class="footer-social-item">
+              <span>Email:</span>
+              <a href="mailto:example@domain.com">[Add TAPAS Email]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 TAPAS PCE. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/meditation.js"></script>
+</body>
+</html>
